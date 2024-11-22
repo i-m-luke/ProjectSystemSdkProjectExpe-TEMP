@@ -5,9 +5,10 @@
 		<Description>SystemTestPackage EXPE</Description>
 		<Icon>SystemTest.ico</Icon>
 		<ProjectType>SystemTestPackage</ProjectType>
-		<RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
-		<SortOrder>1</SortOrder>
-		<TemplateID>{753af18f-a20c-485f-a7ac-6061021ac8f7}</TemplateID>
+		<TemplateID>Zat.SystemTestPackage</TemplateID>
+    <SortOrder>1</SortOrder>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<CreateNewFolder>true</CreateNewFolder>
 		<DefaultName>SystemTestPackage</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>

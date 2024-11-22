@@ -9,7 +9,7 @@ using System.Threading;
 
 using Task = System.Threading.Tasks.Task;
 
-namespace ProjectSystemSdkProjectExpe
+namespace SystemTestToolkit.Extension
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.

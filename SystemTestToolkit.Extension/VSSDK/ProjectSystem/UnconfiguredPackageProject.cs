@@ -15,7 +15,7 @@ namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
         defaultProjectExtension: ProjectExtension,
         language: ProjectLanguage,
         PossibleProjectExtensions = ProjectExtension,
-        ProjectTemplatesDir = "ProjectTemplates")]
+        Capabilities = "SystemTestPackage")]
     internal sealed class UnconfiguredPackageProject
     {
         public const string ProjectExtension = "systestpack";
