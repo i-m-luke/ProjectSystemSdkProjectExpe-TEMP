@@ -8,7 +8,7 @@
         <DataSource Persistence="ProjectFile" Label="Configuration" />
     </Rule.DataSource>
 
-    <StringProperty Name="PackageId" DisplayName="Package ID" Description="ID of the package" 
+    <StringProperty Name="TestPropertyA" DisplayName="TestPropertyA" Description="ID of the package" 
                     ReadOnly="true">
         <StringProperty.DataSource>
             <DataSource HasConfigurationCondition="False" Label="Globals" Persistence="ProjectFile" />

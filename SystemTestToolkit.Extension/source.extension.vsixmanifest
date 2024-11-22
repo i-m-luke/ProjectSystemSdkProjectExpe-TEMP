@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" ?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Zat.SystemTestToolkit.EXPE" Version="1.0" Language="en-US" Publisher="ZAT a.s." />
+        <Identity Id="SystemTestToolkit.EXPE" Version="1.0" Language="en-US" Publisher="ZAT a.s." />
         <DisplayName>SystemTestToolkit (EXPE)</DisplayName>
         <Description xml:space="preserve">SystemTest toolkit extension (EXPE)</Description>
         <Tags>SystemTest, ZAT a.s</Tags>
     </Metadata>
 
-    <Installation AllUsers="true">
+    <Installation AllUsers="true" ExtensionType="VSSDK+VisualStudio.Extensibility">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
