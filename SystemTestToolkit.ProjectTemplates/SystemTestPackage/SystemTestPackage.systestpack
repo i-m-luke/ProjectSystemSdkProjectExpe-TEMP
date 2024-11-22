@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(SystemTestToolkitExtensionBuildPath)\SystemTestToolkit.props" />
+
+	<PropertyGroup>
+		<SchemaVersion>2.0</SchemaVersion>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<OutputType>Library</OutputType>
+		<TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+		<AssemblyName>$safeprojectname$</AssemblyName>
+		<RootNamespace>$safeprojectname$</RootNamespace>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Globals">
+		<!-- NOTE: MSBuild files located in AppData are used for development. The files are copied to AppData within extension project build. -->
+		<SystemTestToolkitExtensionBuildCommonPath>CustomProjectSystems\SystemTestToolkit</SystemTestToolkitExtensionBuildCommonPath>
+		<BuildAndRulesInLocalAppDataPath>$(LocalAppData)\$(SystemTestToolkitExtensionBuildCommonPath)</BuildAndRulesInLocalAppDataPath>
+		<SystemTestToolkitExtensionBuildPath Condition="Exists('$(BuildAndRulesInLocalAppDataPath)\SystemTestToolkit.props')">$(BuildAndRulesInLocalAppDataPath)</SystemTestToolkitExtensionBuildPath>
+		<SystemTestToolkitExtensionBuildPath Condition="'$(SystemTestToolkitExtensionBuildPath)'==''">$(MSBuildExtensionsPath)\$(SystemTestToolkitExtensionBuildCommonPath)\</SystemTestToolkitExtensionBuildPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Folder Include="Assets\"/>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Content Include="PackageManifest.packagemanifest" />
+	</ItemGroup>
+
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Import Project="$(SystemTestToolkitExtensionBuildPath)\SystemTestToolkit.targets" />
+</Project>

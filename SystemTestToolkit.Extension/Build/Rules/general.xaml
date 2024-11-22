@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rule xmlns="http://schemas.microsoft.com/build/2009/properties" Name="ConfigurationGeneral" Description="General"
+      DisplayName="General" PageTemplate="generic">
+    <Rule.Categories>
+        <Category Name="General" Description="General" DisplayName="General" />
+    </Rule.Categories>
+    <Rule.DataSource>
+        <DataSource Persistence="ProjectFile" Label="Configuration" />
+    </Rule.DataSource>
+
+    <StringProperty Name="PackageId" DisplayName="Package ID" Description="ID of the package" 
+                    ReadOnly="true">
+        <StringProperty.DataSource>
+            <DataSource HasConfigurationCondition="False" Label="Globals" Persistence="ProjectFile" />
+        </StringProperty.DataSource>
+    </StringProperty>
+
+    <StringProperty Name="FileName" DisplayName="Project File" ReadOnly="True">
+        <StringProperty.DataSource>
+            <DataSource PersistedName="MSBuildProjectFile" Persistence="ProjectFile" />
+        </StringProperty.DataSource>
+    </StringProperty>
+
+    <StringProperty Name="FullPath" ReadOnly="True">
+        <StringProperty.DataSource>
+            <DataSource PersistedName="MSBuildProjectFullPath" Persistence="ProjectFile" />
+        </StringProperty.DataSource>
+    </StringProperty>
+</Rule>

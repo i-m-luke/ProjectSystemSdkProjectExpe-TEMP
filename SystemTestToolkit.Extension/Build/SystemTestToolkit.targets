@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|AnyCPU">
+			<Configuration>Debug</Configuration>
+			<Platform>AnyCPU</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|AnyCPU">
+			<Configuration>Release</Configuration>
+			<Platform>AnyCPU</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+
+	<!-- Capabilities for this project type. Conditions should be based on platform|configuration only. -->
+	<ItemGroup>
+		<!-- Used in ProjectUnconfigured.cs -->
+		<!-- Also used for AppliesTo for MEF components -->
+		<ProjectCapability Include="SystemTestPackage" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<ExtensionRulesSchemaDirectory Condition="'$(ExtensionSchemaDirectory)' == ''">$(MSBuildThisFileDirectory)Rules\</ExtensionRulesSchemaDirectory>
+	</PropertyGroup>
+
+	<!-- Linking rules with *.targets -->
+	<ItemGroup Label="Rules">
+		<PropertyPageSchema Include="$(ExtensionSchemaDirectory)general.xaml">
+			<Context>Project</Context>
+		</PropertyPageSchema>
+
+		<PropertyPageSchema Include="$(ExtensionSchemaDirectory)general.browseobject.xaml">
+			<Context>BrowseObject</Context>
+		</PropertyPageSchema>
+	</ItemGroup>
+
+	<Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
+
+	<!-- Nuget pack properties initialization -->
+	<Target Name="UsePackageManifestXmlData" DependsOnTargets="Pack">
+		<PropertyGroup>
+			<PackageManifestXmlFilePath>PackageManifest.packagemanifest</PackageManifestXmlFilePath>
+		</PropertyGroup>
+		
+		<!-- Query-Property Pairs -->
+		<ItemGroup>
+			<QPP Include="QPP-PackageID">
+				<!-- pm is the namespace prefix specifed in the XmlPeek.Namespaces attribute -->
+				<!-- @ is used for accessing xml element attribute -->
+				<Query>//pm:Informations/@Identifier</Query>
+				<Property>PackageID</Property>
+			</QPP>
+			<QPP Include="QPP-Description">
+				<Query>//pm:Informations/pm:Description/@DefaultString</Query>
+				<Property>Description</Property>
+			</QPP>
+			<QPP Include="QPP-Authors">
+				<Query>//pm:Informations/pm:Author/@DefaultString</Query>
+				<Property>Authors</Property>
+			</QPP>
+		</ItemGroup>
+
+		<XmlPeek
+			Namespaces="&lt;Namespace Prefix='pm' Uri='http://www.zat.cz/SystemTestToolkit.PackageManifest' /&gt;"
+			XmlInputPath="$(PackageManifestXmlFilePath)"
+			Query="%(QPP.Query)">
+			<Output TaskParameter="Result" PropertyName="%(QPP.Property)" />
+		</XmlPeek>
+
+		<PropertyGroup>
+			<Company>ZAT a.s</Company>
+		</PropertyGroup>
+
+		<Message Text="Nuget package metadata:" Importance="high"/>
+
+		<Message Condition="'$(PackageId)' != ''" Text="PackageID: $(PackageId)" Importance="high"/>
+		<Message Condition="'$(PackageId)' == ''" Text="PackageID not specified!" Importance="high"/>
+
+		<Message Condition="'$(Authors)' != ''" Text="Authors: $(Authors)" Importance="high"/>
+		<Message Condition="'$(Authors)' == ''" Text="Authors not specified!" Importance="high"/>
+
+		<Message Condition="'$(Company)' != ''" Text="Company: $(Company)" Importance="high"/>
+		<Message Condition="'$(Company)' == ''" Text="Company not specified!" Importance="high"/>
+
+		<Message Condition="'$(Description)' != ''" Text="Description: $(Description)" Importance="high"/>
+		<Message Condition="'$(Description)' == ''" Text="Description not specified!" Importance="high"/>
+
+		<Message Condition="'$(Version)' != ''" Text="Version: $(Version)" Importance="high"/>
+		<Message Condition="'$(Version)' == ''" Text="Version not specified!" Importance="high"/>
+	</Target>
+
+	<Target Name="Build">
+	</Target>
+
+	<Target Name="Rebuild">
+	</Target>
+</Project>

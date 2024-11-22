@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+	<TemplateData>
+		<Name>SystemTestPackage EXPE</Name>
+		<Description>SystemTestPackage EXPE</Description>
+		<Icon>SystemTest.ico</Icon>
+		<ProjectType>SystemTestPackage</ProjectType>
+		<RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+		<SortOrder>1</SortOrder>
+		<TemplateID>{753af18f-a20c-485f-a7ac-6061021ac8f7}</TemplateID>
+		<CreateNewFolder>true</CreateNewFolder>
+		<DefaultName>SystemTestPackage</DefaultName>
+		<ProvideDefaultName>true</ProvideDefaultName>
+		<CreateInPlace>true</CreateInPlace>
+	</TemplateData>
+	<TemplateContent>
+		<Project File="SystemTestPackage.systestpack" ReplaceParameters="true">
+			<!-- 
+				These are the items which will show up when a new project is created using the custom project system.
+				Items referenced in here must also be referenced in the project file.
+			-->
+			<ProjectItem OpenInEditor="true">PackageManifest.packagemanifest</ProjectItem>
+			<Folder Name="Assets"/>
+		</Project>
+	</TemplateContent>
+</VSTemplate>

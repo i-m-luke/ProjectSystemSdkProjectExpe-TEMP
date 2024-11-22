@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProjectSchemaDefinitions
+    xmlns="http://schemas.microsoft.com/build/2009/properties">	
+	
+    <ItemType Name="PackageManifest" DisplayName="Package manifest file"/>
+    <ContentType
+        Name="PackageManifest"
+        DisplayName="Package manifest file"
+        ItemType="PackageManifest">
+    </ContentType>
+	
+    <ItemType Name="None" DisplayName="Does not participate in build"/>
+
+    <FileExtension Name=".packagemanifest" ContentType="PackageManifest"/>
+</ProjectSchemaDefinitions>
