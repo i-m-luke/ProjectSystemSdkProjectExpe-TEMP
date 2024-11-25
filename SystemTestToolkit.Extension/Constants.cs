@@ -12,7 +12,7 @@
         /// </summary>
         public const string PackageProjectTypeGuidString = "6a44e701-3313-470e-a760-1711cebfcc1d";
 
-        public static class PojectCapabilities
+        public static class ProjectCapabilities
         {
             public const string SystemTestPackage = nameof(SystemTestPackage);
         }

@@ -25,7 +25,7 @@ namespace SystemTestToolkit.Extension
         {
             RequiresInProcessHosting = true,
             LoadedWhen = ActivationConstraint.ActiveProjectCapability(
-                ProjectCapability.Custom(Constants.PojectCapabilities.SystemTestPackage))
+                ProjectCapability.Custom(Constants.ProjectCapabilities.SystemTestPackage))
         };
 
         /// <inheritdoc />

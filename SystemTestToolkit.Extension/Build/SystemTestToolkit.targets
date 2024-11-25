@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup Label="Rules">
-    <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)general.xaml">
+     <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)general.xaml">
       <Context>Project;BrowseObject</Context>
-    </PropertyPageSchema>
+    </PropertyPageSchema> 
 
-    <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)ProjectItemsSchema.xaml"/>
+    <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)ProjectItemsSchema.xaml;"/>
   </ItemGroup>
 
   <Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />

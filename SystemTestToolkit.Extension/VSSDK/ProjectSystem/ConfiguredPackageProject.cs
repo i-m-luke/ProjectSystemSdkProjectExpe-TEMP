@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.ProjectSystem;
 namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
 {
     [Export]
-    [AppliesTo(Constants.PojectCapabilities.SystemTestPackage)]
+    [AppliesTo(Constants.ProjectCapabilities.SystemTestPackage)]
     internal class ConfiguredPackageProject
     {
         [Import, SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "MEF")]

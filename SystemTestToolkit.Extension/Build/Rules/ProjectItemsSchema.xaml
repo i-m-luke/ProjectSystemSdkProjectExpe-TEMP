@@ -1,16 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ProjectSchemaDefinitions
-    xmlns="http://schemas.microsoft.com/build/2009/properties">	
-	
-    <ContentType
-        Name="PackageManifest"
-        DisplayName="Package manifest file"
-        ItemType="Content">
-    </ContentType>
-	
-    <ItemType Name="None" DisplayName="Does not participate in build"/>
-    <ItemType Name="Content" DisplayName="Content item"/>
-    <ItemType Name="Folder" DisplayName="Folder item"/>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties">
+    <!--  The project type specific items  -->
+  
+    <ContentType Name="PackageManifest" DisplayName="Package manifest file" ItemType="Content" />
+    <FileExtension Name=".packagemanifest" ContentType="PackageManifest" />
 
-    <FileExtension Name=".packagemanifest" ContentType="PackageManifest"/>
+    <!--  General items (taken from: https://github.com/dotnet/project-system/blob/5bc38a453f6342a115e225c3fe64316d1b00e31a/src/Microsoft.VisualStudio.ProjectSystem.Managed/ProjectSystem/Rules/Items/ProjectItemsSchema.xaml  -->
+
+    <ContentType Name="CSharpFile" DisplayName="C# file" ItemType="Compile" />
+    <ContentType Name="Text" DisplayName="Text file" ItemType="Content" />
+    <ContentType Name="XML" DisplayName="Xml file" ItemType="Content" />
+    <ContentType Name="Json" DisplayName="Json file" ItemType="Content" />
+    <ContentType Name="Image" DisplayName="Image file" ItemType="Content" />
+    <ContentType Name="EmbeddedResource" DisplayName="Embedded resource" ItemType="EmbeddedResource" />
+    <ContentType Name="Config" DisplayName="Config file" ItemType="None">
+        <NameValuePair Name="SuppressNumericSuffix" Value="true" />
+    </ContentType>
+    <ContentType Name="Resource" DisplayName="Resource" ItemType="Resource" />
+
+    <ItemType Name="Compile" DisplayName="C# compiler" />
+    <ItemType Name="None" DisplayName="None" UpToDateCheckInput="False" />
+    <ItemType Name="Content" DisplayName="Content" UpToDateCheckInput="False" />
+    <ItemType Name="EmbeddedResource" DisplayName="Embedded resource" />
+    <ItemType Name="Resource" DisplayName="Resource" />
+
+    <FileExtension Name=".cs" ContentType="CSharpFile" />
+    <FileExtension Name=".resx" ContentType="EmbeddedResource" />
+    <FileExtension Name=".vbS" ContentType="Script" />
+    <FileExtension Name=".xml" ContentType="XML" />
+    <FileExtension Name=".config" ContentType="Config" />
+    <FileExtension Name=".cd" ContentType="ClassDiagram" />
+    <FileExtension Name=".json" ContentType="Json" />
+    <!--  Image formats  -->
+    <FileExtension Name=".jpeg" ContentType="Image" />
+    <FileExtension Name=".jpe" ContentType="Image" />
+    <FileExtension Name=".jpg" ContentType="Image" />
+    <FileExtension Name=".jfif" ContentType="Image" />
+    <FileExtension Name=".exif" ContentType="Image" />
+    <FileExtension Name=".gif" ContentType="Image" />
+    <FileExtension Name=".tiff" ContentType="Image" />
+    <FileExtension Name=".tif" ContentType="Image" />
+    <FileExtension Name=".png" ContentType="Image" />
+    <FileExtension Name=".bmp" ContentType="Image" />
+    <FileExtension Name=".dib" ContentType="Image" />
+    <FileExtension Name=".rle" ContentType="Image" />
+    <FileExtension Name=".ico" ContentType="Image" />
+    <FileExtension Name=".wdp" ContentType="Image" />
+    <FileExtension Name=".dds" ContentType="Image" />
+    <FileExtension Name=".tga" ContentType="Image" />
 </ProjectSchemaDefinitions>

@@ -7,6 +7,8 @@ using System;
 using System.CodeDom;
 using System.ComponentModel.Composition;
 
+using ProjectSystemProjectCapabilities = Microsoft.VisualStudio.ProjectSystem.ProjectCapabilities;
+
 namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
 {
     [ProjectTypeRegistration(
@@ -21,32 +23,28 @@ namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
     {
         public const string ProjectExtension = "systestpack";
 
-        public const string ProjectLanguage = "SystemTestPackage";
+        public const string ProjectLanguage = Constants.ProjectCapabilities.SystemTestPackage;
 
         public const string Capabilities =
 #if DEBUG
-            ProjectCapabilities.DiagnoseCapabilities + ";" + // Support for diagnosing project capabilities
+            ProjectSystemProjectCapabilities.DiagnoseCapabilities + ";" + // Support for diagnosing project capabilities
 #endif
-            ProjectLanguage + ";" + // Custom capability for the project type
-            ProjectCapabilities.Cps + ";" +
-            ProjectCapabilities.CSharp + ";" +
-            ProjectCapabilities.ProjectReferences + ";" +
-            ProjectCapabilities.PreserveFormatting + ";" +
-            ProjectCapabilities.HandlesOwnReload + ";" +
-            ProjectCapabilities.ProjectConfigurationsDeclaredDimensions + ";" +
-            ProjectCapabilities.SharedImports + ";" +
-            ProjectCapabilities.UseProjectEvaluationCache + ";" +
+            Constants.ProjectCapabilities.SystemTestPackage + ";" + // Custom capability for the project type
+            ProjectSystemProjectCapabilities.Cps + ";" +
+            ProjectSystemProjectCapabilities.CSharp + ";" +
+            ProjectSystemProjectCapabilities.ProjectReferences + ";" +
+            ProjectSystemProjectCapabilities.PreserveFormatting + ";" +
+            ProjectSystemProjectCapabilities.HandlesOwnReload + ";" +
+            ProjectSystemProjectCapabilities.ProjectConfigurationsDeclaredDimensions + ";" +
+            ProjectSystemProjectCapabilities.SharedImports + ";" +
+            ProjectSystemProjectCapabilities.UseProjectEvaluationCache + ";" +
+            ProjectSystemProjectCapabilities.ShowMissingItemTypes + ";" +
             "DependenciesTree;" + // Support for displaying dependencies tree in Solution Explorer
             "Pack;" + // Support for nuget pack
             "DotNetCore;" + // Support for .NET Core projects
             "AppDesigner;" + // Indicates that the project uses the app designer for managing project properties
             "EditAndContinue;" + // Indicates that the project supports the edit and continue debugging feature
-            "UserSourceItems;" + // Indicates that the user is allowed to add arbitrary files to their project
-            TestCapabilities;
-
-        public const string TestCapabilities =
-            ProjectCapabilities.ShowMissingItemTypes + ";" +
-            ProjectCapabilities.ReferencesFolder + ";";
+            "UserSourceItems;"; // Indicates that the user is allowed to add arbitrary files to their project
 
         [ImportingConstructor]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "ConvertToPrimaryConstructor")]

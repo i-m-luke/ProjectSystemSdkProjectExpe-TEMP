@@ -12,7 +12,7 @@ namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
     /// Updates nodes in the project tree by overriding property values calcuated so far by lower priority providers.
     /// </summary>
     [Export(typeof(IProjectTreePropertiesProvider))]
-    [AppliesTo(Constants.PojectCapabilities.SystemTestPackage)]
+    [AppliesTo(Constants.ProjectCapabilities.SystemTestPackage)]
     [Order((int)Order.TreePropertiesProvider)]
     internal sealed class PackageProjectTreePropertiesProvider : IProjectTreePropertiesProvider
     {
