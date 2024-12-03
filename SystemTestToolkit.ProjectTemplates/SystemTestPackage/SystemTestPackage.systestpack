@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup Label="Globals">
+  <PropertyGroup Label="Globals">
 		<!-- NOTE: MSBuild files located in AppData are used for development. The files are copied to AppData within extension project build. -->
 		<SystemTestToolkitExtensionBuildCommonPath>CustomProjectSystems\SystemTestToolkit</SystemTestToolkitExtensionBuildCommonPath>
 		<BuildAndRulesInLocalAppDataPath>$(LocalAppData)\$(SystemTestToolkitExtensionBuildCommonPath)</BuildAndRulesInLocalAppDataPath>
@@ -10,8 +10,10 @@
 	<Import Project="$(SystemTestToolkitExtensionBuildPath)\SystemTestToolkit.props" />
 
 	<PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
 		<OutputType>Library</OutputType>
-		<TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
 		<AssemblyName>$safeprojectname$</AssemblyName>
 		<RootNamespace>$safeprojectname$</RootNamespace>
 	</PropertyGroup>

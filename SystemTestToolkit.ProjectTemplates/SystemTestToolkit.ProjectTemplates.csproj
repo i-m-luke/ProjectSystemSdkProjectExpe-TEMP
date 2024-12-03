@@ -68,10 +68,14 @@
   -->
   <ItemGroup>
     <Content Include="SystemTestPackage\SystemTest.ico" />
-    <Folder Include="SystemTestPackage\Assets\" />
+    <Folder Include="SystemTestPackage\Assets\">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Folder>
 
     <None Include="SystemTestPackage\PackageManifest.packagemanifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
     </None>
 
     <!-- Included in VSIX -->

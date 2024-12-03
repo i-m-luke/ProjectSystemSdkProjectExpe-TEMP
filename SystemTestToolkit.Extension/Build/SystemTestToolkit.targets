@@ -7,7 +7,7 @@
   <ItemGroup Label="Rules">
      <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)general.xaml">
       <Context>Project;BrowseObject</Context>
-    </PropertyPageSchema> 
+    </PropertyPageSchema>
 
     <PropertyPageSchema Include="$(ExtensionRulesSchemaDirectory)ProjectItemsSchema.xaml;"/>
   </ItemGroup>
