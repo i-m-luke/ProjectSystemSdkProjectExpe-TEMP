@@ -1,5 +1,6 @@
 ﻿using EnvDTE;
 
+using Microsoft.VisualStudio.ProjectSystem.VS;
 using Microsoft.VisualStudio.Shell;
 
 using System;
@@ -32,9 +33,13 @@ namespace SystemTestToolkit.Extension
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
-    [ProvideProjectFactory(typeof(ProjectFactory), "EXPE SystTestPack", "EXPE  projects (*.csproj);*.csproj", "csproj",
+    [ProvideProjectFactory(typeof(ProjectFactory),
+        "EXPE SystTestPack",
+        "EXPE  projects (*.csproj);*.csproj",
         "csproj",
-        "ProjectTemplates", LanguageVsTemplate = "SystemTestPackage EXPE", NewProjectRequireNewFolderVsTemplate = false)]
+        "csproj",
+        projectTemplatesDirectory: @"ProjectTemplates\SystemTestPackage", // ... Or path only to ProjectTemplates directory?
+        LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage
     {
         #region Package Members
@@ -48,9 +53,16 @@ namespace SystemTestToolkit.Extension
         /// <returns>A task representing the async work of package initialization, or an already completed task if there is none. Do not return null from this method.</returns>
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
+            await base.InitializeAsync(cancellationToken, progress);
+
+            var projectFactory = new ProjectFactory(this);
+            this.RegisterProjectFactory(projectFactory);
+
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+
+            // These lines seems useless
         }
 
         #endregion

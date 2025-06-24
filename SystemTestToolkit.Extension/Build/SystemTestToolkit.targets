@@ -13,4 +13,12 @@
   </ItemGroup>
 
   <Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
+
+	<Target Name="BeforeBuildEXPE" AfterTargets="Build">
+		<Message Importance="high" Text="Before Build target executed" />
+	</Target>
+
+  <Target Name="BeforePackEXPE" AfterTargets="Pack">
+	  <Message Importance="high" Text="Before Pack target executed" />
+  </Target>
 </Project>

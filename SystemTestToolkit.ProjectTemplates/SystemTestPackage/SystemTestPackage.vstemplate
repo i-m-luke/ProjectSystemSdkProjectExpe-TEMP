@@ -1,25 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project"  xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
 	<TemplateData>
-		<Name>SystemTestPackage EXPE</Name>
-		<Description>SystemTestPackage EXPE</Description>
+		<Name>System Test Project (CZ) :)</Name>
+		<Description>English localized description for System Test Project template.</Description>
 		<Icon>SystemTest.ico</Icon>
 		<ProjectType>SystemTestPackage</ProjectType>
-		<TemplateID>Zat.SystemTestPackage</TemplateID>
-		<SortOrder>1</SortOrder>
-		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<SortOrder>30</SortOrder>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-		<CreateNewFolder>true</CreateNewFolder>
-		<DefaultName>SystemTestPackage EXPE</DefaultName>
+		<DefaultName>SystemTestProject</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>
 		<CreateInPlace>true</CreateInPlace>
 	</TemplateData>
 	<TemplateContent>
 		<Project File="SystemTestPackage.csproj" ReplaceParameters="true">
-			<!-- 
-				These are the items which will show up when a new project is created using the custom project system.
-				Items referenced in here must also be referenced in the project file.
-			-->
 			<ProjectItem OpenInEditor="true">PackageManifest.packagemanifest</ProjectItem>
 			<Folder Name="Assets"/>
 		</Project>

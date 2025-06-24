@@ -14,8 +14,6 @@
     <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
 		<OutputType>Library</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
-		<AssemblyName>$safeprojectname$</AssemblyName>
-		<RootNamespace>$safeprojectname$</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

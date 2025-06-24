@@ -7,11 +7,6 @@
         /// </summary>
         public const string PackageGuidString = "d8e11f07-4a61-4a5c-aa50-462a9e70cc65";
 
-        /// <summary>
-        /// Package project type GUID string.
-        /// </summary>
-        public const string PackageProjectTypeGuidString = "6a44e701-3313-470e-a760-1711cebfcc1d";
-
         public static class ProjectCapabilities
         {
             public const string SystemTestPackage = nameof(SystemTestPackage);
