@@ -7,6 +7,8 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Threading;
 
+using SystemTestToolkit.Extension.VSSDK.ProjectSystem;
+
 using Task = System.Threading.Tasks.Task;
 
 namespace SystemTestToolkit.Extension
@@ -30,6 +32,9 @@ namespace SystemTestToolkit.Extension
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
+    [ProvideProjectFactory(typeof(ProjectFactory), "EXPE SystTestPack", "EXPE  projects (*.csproj);*.csproj", "csproj",
+        "csproj",
+        "ProjectTemplates", LanguageVsTemplate = "SystemTestPackage EXPE", NewProjectRequireNewFolderVsTemplate = false)]
     public sealed class VssdkPackage : AsyncPackage
     {
         #region Package Members

@@ -6,16 +6,16 @@
 		<Icon>SystemTest.ico</Icon>
 		<ProjectType>SystemTestPackage</ProjectType>
 		<TemplateID>Zat.SystemTestPackage</TemplateID>
-    <SortOrder>1</SortOrder>
-    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<SortOrder>1</SortOrder>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<CreateNewFolder>true</CreateNewFolder>
-		<DefaultName>SystemTestPackage</DefaultName>
+		<DefaultName>SystemTestPackage EXPE</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>
 		<CreateInPlace>true</CreateInPlace>
 	</TemplateData>
 	<TemplateContent>
-		<Project File="SystemTestPackage.systestpack" ReplaceParameters="true">
+		<Project File="SystemTestPackage.csproj" ReplaceParameters="true">
 			<!-- 
 				These are the items which will show up when a new project is created using the custom project system.
 				Items referenced in here must also be referenced in the project file.

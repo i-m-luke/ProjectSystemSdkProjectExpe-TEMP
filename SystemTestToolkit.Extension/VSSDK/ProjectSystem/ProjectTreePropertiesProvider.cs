@@ -14,7 +14,7 @@ namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem
     [Export(typeof(IProjectTreePropertiesProvider))]
     [AppliesTo(Constants.ProjectCapabilities.SystemTestPackage)]
     [Order((int)Order.TreePropertiesProvider)]
-    internal sealed class PackageProjectTreePropertiesProvider : IProjectTreePropertiesProvider
+    internal sealed class ProjectTreePropertiesProvider : IProjectTreePropertiesProvider
     {
         // NOTE -  to list KnownMonikers list use:
         // a) Glyphlist: https://glyphlist.azurewebsites.net/knownmonikers/

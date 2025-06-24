@@ -33,7 +33,6 @@
     <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
     <!-- Hybrid extension properties-->
     <VssdkCompatibleExtension>true</VssdkCompatibleExtension>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <!-- Configuration properties -->
@@ -60,39 +59,28 @@
   <!-- Reference items -->
 
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.XmlEditor">
-      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.VisualStudio.XmlEditor\v4.0_14.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.XmlEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0-preview2" />
+	  
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.12.40392" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="17.7.47">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	  
     <PackageReference Include="Microsoft.VisualStudio.ProjectSystem" Version="17.9.380" />
+    <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Sdk" Version="17.9.380" />
     <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Analyzers" Version="17.9.380">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.SDK" Version="17.9.380" />
     <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Sdk.Tools" Version="17.9.380">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+	  
     <PackageReference Include="Microsoft.VisualStudio.Extensibility" Version="17.12.2051" />
     <PackageReference Include="Microsoft.VisualStudio.Extensibility.Sdk" Version="17.12.40390" />
     <PackageReference Include="Microsoft.VisualStudio.Extensibility.Build" Version="17.12.40390" />
-    <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="17.7.47">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -107,19 +95,6 @@
   </ItemGroup>
 
   <!-- Compilation items: -->
-
-  <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="VSExtensibilityEntrypoint.cs" />
-    <Compile Include="VSSDK\ProjectSystem\ConfiguredPackageProject.cs" />
-    <Compile Include="VSSDK\ProjectSystem\Order.cs" />
-    <Compile Include="VSSDK\ProjectSystem\PackageProjectTreePropertiesProvider.cs" />
-    <Compile Include="VSSDK\ProjectSystem\ProjectProperties.cs" />
-    <Compile Include="VSSDK\ProjectSystem\RuleObjectProvider.cs" />
-    <Compile Include="VSSDK\ProjectSystem\UnconfiguredPackageProject.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VSSDKPackage.cs" />
-  </ItemGroup>
 
   <!-- Extension items:-->
   <!-- This will include the msbuild files and rules files in the VSIX file, installed under 
