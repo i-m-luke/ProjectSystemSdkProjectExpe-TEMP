@@ -25,6 +25,8 @@ public class ProjectFactory : IVsProjectFactory
     {
         project = IntPtr.Zero;
         canceled = 0;
+
+
         return VSConstants.S_OK;
     }
 

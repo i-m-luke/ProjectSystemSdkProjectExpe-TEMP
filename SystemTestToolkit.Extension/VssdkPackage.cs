@@ -33,12 +33,13 @@ namespace SystemTestToolkit.Extension
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
-    [ProvideProjectFactory(typeof(ProjectFactory),
-        "EXPE SystTestPack",
-        "EXPE  projects (*.csproj);*.csproj",
-        "csproj",
-        "csproj",
-        projectTemplatesDirectory: @"ProjectTemplates\SystemTestPackage", // ... Or path only to ProjectTemplates directory?
+    [ProvideProjectFactory(
+        factoryType: typeof(ProjectFactory),
+        name: "EXPE SystTestPack",
+        displayProjectFileExtensionsResourceID: null,
+        defaultProjectExtension: "systest",
+        possibleProjectExtensions: "systest",
+        projectTemplatesDirectory: "ProjectTemplates",
         LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage
     {

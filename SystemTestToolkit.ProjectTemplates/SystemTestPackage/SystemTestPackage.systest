@@ -1,32 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup Label="Globals">
+	<PropertyGroup Label="Globals">
 		<!-- NOTE: MSBuild files located in AppData are used for development. The files are copied to AppData within extension project build. -->
 		<SystemTestToolkitExtensionBuildCommonPath>CustomProjectSystems\SystemTestToolkit</SystemTestToolkitExtensionBuildCommonPath>
 		<BuildAndRulesInLocalAppDataPath>$(LocalAppData)\$(SystemTestToolkitExtensionBuildCommonPath)</BuildAndRulesInLocalAppDataPath>
 		<SystemTestToolkitExtensionBuildPath Condition="Exists('$(BuildAndRulesInLocalAppDataPath)\SystemTestToolkit.props')">$(BuildAndRulesInLocalAppDataPath)</SystemTestToolkitExtensionBuildPath>
 		<SystemTestToolkitExtensionBuildPath Condition="'$(SystemTestToolkitExtensionBuildPath)'==''">$(MSBuildExtensionsPath)\$(SystemTestToolkitExtensionBuildCommonPath)\</SystemTestToolkitExtensionBuildPath>
 	</PropertyGroup>
-
+	
 	<Import Project="$(SystemTestToolkitExtensionBuildPath)\SystemTestToolkit.props" />
 
 	<PropertyGroup>
-    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
-    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<OutputType>Library</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<Folder Include="Assets\" />
-	</ItemGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
 
-	<ItemGroup>
-		<ProjectCapability Include="SystemTestPackage"/>
-		<ProjectCapability Include="CPS"/>
-		<ProjectCapability Include="DiagnoseCapabilities"/>
-	</ItemGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
 
-	<ItemGroup>
+	<ItemGroup>   
+		<Folder Include="Assets\" />    
 		<Content Include="PackageManifest.packagemanifest" />
 	</ItemGroup>
 

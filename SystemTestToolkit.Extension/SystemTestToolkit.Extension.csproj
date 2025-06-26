@@ -149,7 +149,6 @@
     </EmbeddedResource>
   </ItemGroup>
 
-
   <!-- Although the above causes the VSIX to contain the MSBuild and rules files, the automatic deploy of the
        VSIX to the experimental instance of Visual Studio on build does not copy the files to the MSBuild
        location. In order to simplify development, we'll copy the files to a different well-known location. To
