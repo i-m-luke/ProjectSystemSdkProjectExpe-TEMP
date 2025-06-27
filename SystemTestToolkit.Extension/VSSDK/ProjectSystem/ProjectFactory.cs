@@ -1,10 +1,30 @@
 ﻿namespace SystemTestToolkit.Extension.VSSDK.ProjectSystem;
 
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell.Flavor;
 using Microsoft.VisualStudio.Shell.Interop;
 
 using System;
 using System.Runtime.InteropServices;
+
+//[Guid(GuidString)]
+//public class ProjectFactory : FlavoredProjectFactoryBase
+//{
+//    public const string GuidString = "d8e11f07-4a61-4a5c-aa50-462a9e70cc65";
+
+//    private readonly VssdkPackage package;
+
+//    public ProjectFactory(VssdkPackage package)
+//    {
+//        this.package = package;
+//    }
+
+//    protected override object PreCreateForOuter(IntPtr outerProjectIUnknown)
+//    {
+//        // Vytvoření a vrácení naší vlastní "flavor" třídy
+//        return new SystemTestFlavorProject(this.package);
+//    }
+//}
 
 // Factory can be empty type and the ProvideProjectFactory works ...
 [Guid(GuidString)]

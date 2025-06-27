@@ -5,15 +5,15 @@
 		<Name>System Test Project (CZ) :-)</Name>
 		<Description>English localized description for System Test Project template.</Description>
 		<Icon>SystemTest.ico</Icon>
+		<AppliesTo>SystemTestPackage</AppliesTo>
 		<ProjectType>SystemTestPackage</ProjectType>
-		<SortOrder>30</SortOrder>
-		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<SortOrder>1</SortOrder>
 		<DefaultName>SystemTestProject</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>
 		<CreateInPlace>true</CreateInPlace>
 	</TemplateData>
 	<TemplateContent>
-		<Project File="SystemTestPackage.systest" ReplaceParameters="true">
+		<Project File="SystemTestPackage.csproj" ReplaceParameters="true">
 			<ProjectItem OpenInEditor="true">PackageManifest.packagemanifest</ProjectItem>
 			<Folder Name="Assets"/>
 		</Project>
