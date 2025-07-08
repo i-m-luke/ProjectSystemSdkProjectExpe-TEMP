@@ -14,6 +14,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<OutputType>Library</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
+		<ProjectTypeGuids>{6a44e701-3313-470e-a760-1711cebfcc1d};{9A19103F-16F7-4668-BE54-9A1E7A4F7556}</ProjectTypeGuids>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

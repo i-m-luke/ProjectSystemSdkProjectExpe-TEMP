@@ -37,8 +37,8 @@ namespace SystemTestToolkit.Extension
         factoryType: typeof(ProjectFactory),
         name: "EXPE SystTestPack",
         displayProjectFileExtensionsResourceID: null,
-        defaultProjectExtension: "csproj",
-        possibleProjectExtensions: "csproj",
+        defaultProjectExtension: "systestpack",
+        possibleProjectExtensions: "systestpack",
         projectTemplatesDirectory: "ProjectTemplates",
         LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage
