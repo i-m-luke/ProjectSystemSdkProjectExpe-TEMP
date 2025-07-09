@@ -5,8 +5,7 @@
 		<Name>System Test Project (CZ) :-) - WITH EMPTY FACTORY</Name>
 		<Description>English localized description for System Test Project template.</Description>
 		<Icon>SystemTest.ico</Icon>
-		<AppliesTo>SystemTestPackage</AppliesTo>
-		<ProjectType>SystemTestPackage</ProjectType>
+		<ProjectType>CSharp</ProjectType>
 		<SortOrder>1</SortOrder>
 		<DefaultName>SystemTestProject</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>

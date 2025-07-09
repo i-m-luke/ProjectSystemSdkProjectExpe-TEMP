@@ -34,12 +34,12 @@ namespace SystemTestToolkit.Extension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
     [ProvideProjectFactory(
-        factoryType: typeof(EmptyProjectFactory),
+        factoryType: typeof(EmptyProjectFactory), // The factory is empty its just an empty class with a Guid attribute so can't be properly registered using RegisterProjectFactoryAttribute
         name: null,
         displayProjectFileExtensionsResourceID: null,
         defaultProjectExtension: "csproj",
         possibleProjectExtensions: "csproj",
-        projectTemplatesDirectory: "ProjectTemplates",
+        projectTemplatesDirectory: "ProjectTemplates", // Directory path is relative to the VSIX root directory
         LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage
     {
@@ -55,9 +55,6 @@ namespace SystemTestToolkit.Extension
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await base.InitializeAsync(cancellationToken, progress);
-
-            var projectFactory = new ProjectFactory(this);
-            this.RegisterProjectFactory(projectFactory);
 
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
