@@ -1,156 +1,168 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!-- General properties: -->
-  <PropertyGroup>
-    <SchemaVersion>2.0</SchemaVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>1.0.0</ProductVersion>
-    <ProjectGuid>{E07A6248-4AEE-4D2F-AD08-FC3FACB51864}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemTestToolkit.Extension</RootNamespace>
-    <AssemblyName>SystemTestToolkit.Extension</AssemblyName>
-    <TargetFramework>net472</TargetFramework>
-    <LangVersion>12.0</LangVersion>
-    <StartAction>Program</StartAction>
-    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
-    <StartArguments>/rootsuffix Exp</StartArguments>
-    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
-    <GeneratePkgDefFile>true</GeneratePkgDefFile>
-    <UseCodebase>true</UseCodebase>
-    <FileAlignment>512</FileAlignment>
-    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
-  </PropertyGroup>
+	<!-- General properties: -->
+	<PropertyGroup>
+		<SchemaVersion>2.0</SchemaVersion>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>1.0.0</ProductVersion>
+		<ProjectGuid>{E07A6248-4AEE-4D2F-AD08-FC3FACB51864}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>SystemTestToolkit.Extension</RootNamespace>
+		<AssemblyName>SystemTestToolkit.Extension</AssemblyName>
+		<TargetFramework>net472</TargetFramework>
+		<LangVersion>12.0</LangVersion>
+		<StartAction>Program</StartAction>
+		<StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+		<StartArguments>/rootsuffix Exp</StartArguments>
+		<CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+		<GeneratePkgDefFile>true</GeneratePkgDefFile>
+		<UseCodebase>true</UseCodebase>
+		<FileAlignment>512</FileAlignment>
+		<CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+	</PropertyGroup>
 
-  <!-- Extension properties: -->
-  <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
-    <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <TargetFrameworkProfile />
-    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
-    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
-    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
-    <!-- Hybrid extension properties-->
-    <VssdkCompatibleExtension>true</VssdkCompatibleExtension>
-  </PropertyGroup>
+	<!-- Extension properties: -->
+	<PropertyGroup>
+		<VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+		<MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
+		<VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+		<TargetFrameworkProfile />
+		<IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+		<IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+		<IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+		<!-- Hybrid extension properties-->
+		<VssdkCompatibleExtension>true</VssdkCompatibleExtension>
+	</PropertyGroup>
 
-  <!-- Configuration properties -->
+	<!-- Configuration properties -->
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
 
-  <!-- Reference items -->
+	<!-- Reference items -->
 
-  <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.14.40265" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="17.7.79">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-	  
-    <PackageReference Include="Microsoft.VisualStudio.Extensibility" Version="17.14.2088" />
-    <PackageReference Include="Microsoft.VisualStudio.Extensibility.Sdk" Version="17.14.40254" />
-    <PackageReference Include="Microsoft.VisualStudio.Extensibility.Build" Version="17.14.40254" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 
-  <ItemGroup>
-     <!--Reference for project that takes care of project templates-->  
-    <ProjectReference Include="..\SystemTestToolkit.ProjectTemplates\SystemTestToolkit.ProjectTemplates.csproj">
-      <Project>{D283E124-DA73-40BC-9CDF-F817B26AF120}</Project>
-      <Name>SystemTestToolkit.ProjectTemplates</Name>
-      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
-	  <TemplateType>Project</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-  </ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.14.40265" ExcludeAssets="runtime" />
+		<PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="17.7.79">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 
-  <!-- Extension items:-->
-  <!-- This will include the msbuild files and rules files in the VSIX file, installed under 
+		<PackageReference Include="Microsoft.VisualStudio.ProjectSystem" Version="17.9.380" />
+		<PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Sdk" Version="17.9.380" />
+		<PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Analyzers" Version="17.9.380">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Sdk.Tools" Version="17.9.380">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="Microsoft.VisualStudio.Extensibility" Version="17.14.2088" />
+		<PackageReference Include="Microsoft.VisualStudio.Extensibility.Sdk" Version="17.14.40254" />
+		<PackageReference Include="Microsoft.VisualStudio.Extensibility.Build" Version="17.14.40254" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!--Reference for project that takes care of project templates-->
+		<ProjectReference Include="..\SystemTestToolkit.ProjectTemplates\SystemTestToolkit.ProjectTemplates.csproj">
+			<Project>{D283E124-DA73-40BC-9CDF-F817B26AF120}</Project>
+			<Name>SystemTestToolkit.ProjectTemplates</Name>
+			<VSIXSubPath>ProjectTemplates</VSIXSubPath>
+			<TemplateType>Project</TemplateType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+		</ProjectReference>
+	</ItemGroup>
+
+	<!-- Extension items:-->
+	<!-- This will include the msbuild files and rules files in the VSIX file, installed under 
        MSBuildExtensionsPath ([Visual Studio Install Path]\MSBuild). This gives the files a well-known
        location, so projects can import these files and work for different users on the same machine, or work
        on different machines when VS is installed on a different path, as long as the VSIX was installed.
        NOTE: The VSIX manifest needs the "This VSIX is installed for all users (requires elevation on install)"
        checkbox to be checked. -->
-  <ItemGroup>
-    <VSIXSourceItem Include="Build\*">
-      <InProject>false</InProject>
-      <InstallRoot>MSBuild</InstallRoot>
-      <VSIXSubPath>CustomProjectSystems\SystemTestToolkit</VSIXSubPath>
-    </VSIXSourceItem>
+	<ItemGroup>
+		<VSIXSourceItem Include="Build\*">
+			<InProject>false</InProject>
+			<InstallRoot>MSBuild</InstallRoot>
+			<VSIXSubPath>CustomProjectSystems\SystemTestToolkit</VSIXSubPath>
+		</VSIXSourceItem>
 
-    <VSIXSourceItem Include="Build\Rules\*">
-      <InProject>false</InProject>
-      <InstallRoot>MSBuild</InstallRoot>
-      <VSIXSubPath>CustomProjectSystems\SystemTestToolkit\Rules</VSIXSubPath>
-    </VSIXSourceItem>
-  </ItemGroup>
+		<VSIXSourceItem Include="Build\Rules\*">
+			<InProject>false</InProject>
+			<InstallRoot>MSBuild</InstallRoot>
+			<VSIXSubPath>CustomProjectSystems\SystemTestToolkit\Rules</VSIXSubPath>
+		</VSIXSourceItem>
+	</ItemGroup>
 
-  <!-- Other items -->
+	<!-- Other items -->
 
-  <ItemGroup>
-    <None Include="source.extension.vsixmanifest">
-      <SubType>Designer</SubType>
-    </None>
+	<ItemGroup>
+		<None Include="source.extension.vsixmanifest">
+			<SubType>Designer</SubType>
+		</None>
 
-    <None Include="Build\SystemTestToolkit.props" />
-    <None Include="Build\SystemTestToolkit.targets" />
-  </ItemGroup>
+		<None Include="Build\SystemTestToolkit.props" />
+		<None Include="Build\SystemTestToolkit.targets" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include=".vsextension\string-resources.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Pack>false</Pack>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include=".vsextension\string-resources.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<Pack>false</Pack>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <!-- Although the above causes the VSIX to contain the MSBuild and rules files, the automatic deploy of the
+	<!-- Although the above causes the VSIX to contain the MSBuild and rules files, the automatic deploy of the
        VSIX to the experimental instance of Visual Studio on build does not copy the files to the MSBuild
        location. In order to simplify development, we'll copy the files to a different well-known location. To
        avoid needed to run Visual Studio as administrator, or overwriting the files installed by the VSIX,
        we'll copy to a different location, in the current user's profile. However, this requires any project
        used to test the project system to import the files from a different location than to use the project
        system installed from the VSIX. -->
-  <Target Name="CustomAfterBuild" BeforeTargets="Build;Rebuild">
-    <ItemGroup>
-      <BuildToCopy Include="Build\*" />
-      <RulesToCopy Include="Build\Rules\*" />
-    </ItemGroup>
+	<Target Name="CustomAfterBuild" BeforeTargets="Build;Rebuild">
+		<ItemGroup>
+			<BuildToCopy Include="Build\*" />
+			<RulesToCopy Include="Build\Rules\*" />
+		</ItemGroup>
 
-    <Copy SourceFiles="@(BuildToCopy)" DestinationFiles="@(BuildToCopy->'$(LocalAppData)\CustomProjectSystems\SystemTestToolkit\%(RecursiveDir)%(FileName)%(Extension)')" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(RulesToCopy)" DestinationFiles="@(RulesToCopy->'$(LocalAppData)\CustomProjectSystems\SystemTestToolkit\Rules\%(RecursiveDir)%(FileName)%(Extension)')" SkipUnchangedFiles="true" />
-  </Target>
+		<Copy SourceFiles="@(BuildToCopy)" DestinationFiles="@(BuildToCopy->'$(LocalAppData)\CustomProjectSystems\SystemTestToolkit\%(RecursiveDir)%(FileName)%(Extension)')" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(RulesToCopy)" DestinationFiles="@(RulesToCopy->'$(LocalAppData)\CustomProjectSystems\SystemTestToolkit\Rules\%(RecursiveDir)%(FileName)%(Extension)')" SkipUnchangedFiles="true" />
+	</Target>
 </Project>

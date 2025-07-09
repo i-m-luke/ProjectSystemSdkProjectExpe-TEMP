@@ -14,12 +14,6 @@
 
 	<ItemGroup>
 		<ProjectCapability Include="SystemTestPackage"/>
-		<ProjectCapability Include="CPS"/>
-		<ProjectCapability Include="CSharp"/>
-		<ProjectCapability Include="Managed" />
-		<ProjectCapability Include="AssemblyReferences" />
-		<ProjectCapability Include="ProjectReferences" />
-		<ProjectCapability Include="PackageReferences" />
 	</ItemGroup>
 
 	<Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
