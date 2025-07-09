@@ -60,7 +60,7 @@
     <Content Include="SystemTestPackage\PackageManifest.packagemanifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="SystemTestPackage\SystemTestPackage.csproj">
+    <None Include="SystemTestPackage\SystemTestPackage.systestpack">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -13,7 +13,7 @@
 		<CreateInPlace>true</CreateInPlace>
 	</TemplateData>
 	<TemplateContent>
-		<Project File="SystemTestPackage.csproj" ReplaceParameters="true">
+		<Project File="SystemTestPackage.systestpack" ReplaceParameters="true">
 			<ProjectItem OpenInEditor="true">PackageManifest.packagemanifest</ProjectItem>
 			<Folder Name="Assets"/>
 		</Project>

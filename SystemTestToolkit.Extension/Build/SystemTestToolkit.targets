@@ -14,8 +14,6 @@
 	
 	<ItemGroup>
 		<ProjectCapability Include="SystemTestPackage"/>
-		<ProjectCapability Include="CPS"/>
-		<ProjectCapability Include="CSharp"/>
 	</ItemGroup>
 
 	<Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
