@@ -33,14 +33,6 @@ namespace SystemTestToolkit.Extension
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
-    [ProvideProjectFactory(
-        factoryType: typeof(ProjectFactory),
-        name: "EXPE SystTestPack",
-        displayProjectFileExtensionsResourceID: null,
-        defaultProjectExtension: "csproj",
-        possibleProjectExtensions: "csproj",
-        projectTemplatesDirectory: "ProjectTemplates",
-        LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage
     {
         #region Package Members
@@ -55,9 +47,6 @@ namespace SystemTestToolkit.Extension
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await base.InitializeAsync(cancellationToken, progress);
-
-            var projectFactory = new ProjectFactory(this);
-            this.RegisterProjectFactory(projectFactory);
 
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.

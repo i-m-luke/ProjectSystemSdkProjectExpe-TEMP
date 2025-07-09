@@ -5,7 +5,6 @@
 		<Name>System Test Project (CZ) :-)</Name>
 		<Description>English localized description for System Test Project template.</Description>
 		<Icon>SystemTest.ico</Icon>
-		<AppliesTo>SystemTestPackage</AppliesTo>
 		<ProjectType>SystemTestPackage</ProjectType>
 		<SortOrder>1</SortOrder>
 		<DefaultName>SystemTestProject</DefaultName>
@@ -13,7 +12,7 @@
 		<CreateInPlace>true</CreateInPlace>
 	</TemplateData>
 	<TemplateContent>
-		<Project File="SystemTestPackage.csproj" ReplaceParameters="true">
+		<Project File="SystemTestPackage.systestpack" ReplaceParameters="true">
 			<ProjectItem OpenInEditor="true">PackageManifest.packagemanifest</ProjectItem>
 			<Folder Name="Assets"/>
 		</Project>
