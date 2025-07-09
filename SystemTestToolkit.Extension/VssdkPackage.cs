@@ -34,11 +34,11 @@ namespace SystemTestToolkit.Extension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(SystemTestToolkit.Extension.Constants.PackageGuidString)]
     [ProvideProjectFactory(
-        factoryType: typeof(ProjectFactory),
-        name: "EXPE SystTestPack",
+        factoryType: typeof(EmptyProjectFactory),
+        name: null,
         displayProjectFileExtensionsResourceID: null,
-        defaultProjectExtension: "systestpack",
-        possibleProjectExtensions: "systestpack",
+        defaultProjectExtension: "csproj",
+        possibleProjectExtensions: "csproj",
         projectTemplatesDirectory: "ProjectTemplates",
         LanguageVsTemplate = "SystemTestPackage")]
     public sealed class VssdkPackage : AsyncPackage

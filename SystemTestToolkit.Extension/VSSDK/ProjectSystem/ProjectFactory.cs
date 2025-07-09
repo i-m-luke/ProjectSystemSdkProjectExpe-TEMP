@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.Shell.Flavor;
 using Microsoft.VisualStudio.Shell.Interop;
 
 using System;
+using System.Configuration;
 using System.Runtime.InteropServices;
 
 [Guid(GuidString)]
@@ -29,6 +30,13 @@ public class ProjectFactory : FlavoredProjectFactoryBase
     {
         return base.CanCreateProject(fileName, flags);
     }
+}
+
+// Factory can be empty to only leverage project template registration
+[Guid(GuidString)]
+public class EmptyProjectFactory
+{
+    public const string GuidString = "77a23a32-5212-4dd4-b79f-422379fc479a";
 }
 
 // Factory can be empty type and the ProvideProjectFactory works ...
